@@ -1,0 +1,12 @@
+---
+  - name: Install and build Dockerfile
+    hosts: clients
+    
+    tasks:
+    - name: Include variables from config.yaml
+      include_vars:
+        file: config.yaml
+
+    - name: Build and run LAMP stack
+      include_role:
+        name: lamp_docker
